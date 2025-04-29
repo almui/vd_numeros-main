@@ -2,9 +2,10 @@
   import * as d3 from "d3"
 
   import OscaStatue from "./lib/OscaStatue.svelte"
+  import CanneStatue from "./lib/CanneStatue.svelte"
 
 
-  let numbers = [{pelicula:"The Departed (2006)", cantidad:24, otra:100}, 
+  let numbers = [{pelicula:"The Departed (2006)", cantidad:24, otra:23}, 
 {pelicula:"A Beautiful Mind (2001)", cantidad:33, otra:35}, 
 {pelicula:"Chicago (2002)", cantidad:42, otra: 45}, 
 {pelicula:"The Kings Speech (2010)", cantidad:54, otra: 56}, 
@@ -13,7 +14,7 @@
 {pelicula:"Gladiator (2000)", cantidad:77, otra: 38}, 
 {pelicula:"Forrest Gump (1994)", cantidad:87, otra:32}, 
 {pelicula:"LotR: The Return of the King (2003)", cantidad:92, otra: 28}, 
-{pelicula:"Titanic (1997)", cantidad:100, otra:25}]
+{pelicula:"Titanic (1997)", cantidad:98, otra:25}]
 
 </script>
 <div id="titulo"> 
@@ -23,23 +24,24 @@
 
 
   <div >
-    <p>Ganar el Oscar a Mejor Película es un gran reconocimiento, pero no garantiza automáticamente un éxito duradero en taquilla. Sin embargo, hay casos en los que el prestigio del premio se transforma en un fenómeno de público. A lo largo de los años, algunas ganadoras se convirtieron en verdaderos fenómenos de taquilla, permaneciendo en cartelera durante meses, incluso más de un año. Otras, en cambio, lograron su mayor impacto en la temporada de premios, pero no mantuvieron el mismo nivel de asistencia en los cines después.
+    <p>Ganar el Oscar a Mejor Película frecuentemente se traduce en una mayor permanencia en cartelera, con las películas disfrutando de un extenso tiempo en salas. Por otro lado, cuando esas mismas películas han sido previamente premiadas en el Festival de Cannes, las semanas en cartelera pueden diferir. Aunque Cannes es un reconocimiento altamente respetado por la crítica y cineastas, el Oscar tiende a atraer una respuesta más amplia del público general, lo que se refleja en una mayor duración en cines tras su victoria.
 </p>
   </div>
    <div>
-    <h3 >Semanas en cartelera tras ganar el Oscar a Mejor Película.</h3>
+
+    <h3 >Películas con la mayor cantidad de semanas despues de ganar un Oscar</h3>
    </div>
   </main>
   <OscaStatue numbers={numbers}  />
+  <h3 >Cantidad de semanas de las mismas películas despues de ganar en el Festival de Cannes</h3>
+  <CanneStatue numbers={numbers}  />
   <main class="container">
-  <p> Un ejemplo destacable es Titanic, ya que se ha reestrenado varias veces desde su estreno original en 1997, y cada vez fue un éxito en taquilla. Otra notable ganadora es Forrest Gump, una película profundamente dramática que ha perdurado en la memoria colectiva gracias a sus frases icónicas y su emotiva historia.
-
-    De hecho, al analizar las películas que ganaron el Oscar a Mejor Película entre 1994 y 2020, se observa que la mayoría pertenecen al género drama. Esta tendencia resalta cómo el drama ha sido históricamente un vehículo eficaz para conectar con el público y los votantes de los premios de la industria cinematográfica.</p>
-  <h3 >El aumento es notable</h3>
+  <p> Aunque la visualización anterior muestran las películas que permanecieron más tiempo en cartelera tras ganar el Oscar, ahora analizaremos cómo se comportan esas mismas películas a lo largo del tiempo, organizadas cronológicamente. Al organizarlas por año, es posible observar una tendencia interesante: con el tiempo, la diferencia entre el impacto de Los Oscars y el del Festival de Cannes parece ir reduciéndose. Aunque el Oscar sigue siendo un motor de éxito comercial, cada vez más el público parece estar reconociendo el valor que Cannes ya había señalado antes. Esto podría indicar una mayor sintonía entre la mirada de la crítica y las preferencias del público, o incluso una apertura creciente hacia propuestas cinematográficas más arriesgadas o autorales.</p>
+  <h3 >El reconocimiento creciente que se refleja en las salas de cine</h3>
   <div class="flourish-embed flourish-chart" data-src="visualisation/22905140"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22905140/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
   
 
-    <p>En los últimos años, parece cada vez más evidente que las nominaciones y premios en los Oscar tienen un impacto directo en el comportamiento del público. A diferencia de décadas anteriores, cuando el efecto de los premios se limitaba principalmente al prestigio, ahora parece que ser nominado o ganar un Oscar podría influir en la duración de una película en cartelera. Es interesante notar que muchas películas experimentan un “segundo aire” comercial tras las nominaciones, atrayendo a nuevos espectadores que inicialmente no las habían considerado. Este fenómeno podría estar sugiriendo que, además de ser un reconocimiento artístico, los Oscar también se han convertido en una poderosa herramienta para aumentar la visibilidad y el éxito comercial de una película.</p>
+    <p>Esto refuerza la idea de que, más allá del impacto inmediato en taquilla, ganar un premio sigue siendo una forma poderosa de reconocimiento. Al observar el promedio de semanas en cartelera, notamos que, aunque las diferencias entre premios se mantienen, la tendencia general es creciente. Esto habla de un público cada vez más dispuesto a descubrir y acompañar películas reconocidas por su calidad. Lo que sugiere que los premios no solo celebran el valor artístico, sino que también ayudan a que esas historias permanezcan vivas por más tiempo en la pantalla grande.</p>
    
     <h3 >Tener un premio es mejor que no tener ninguno.</h3>
    <div class="flourish-embed flourish-chart" data-src="visualisation/22905243"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/22905243/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
@@ -57,7 +59,7 @@
     
     max-width: 1530px;
     margin: 0 auto;
-    height: 300px;
+    height: 320px;
 
     background-color: white;
   }
@@ -113,6 +115,7 @@ margin: 0px;
   font-weight: 400;
   font-style: normal;
   text-align: left;
+  padding-left: 110px;
 
     color: black;
 

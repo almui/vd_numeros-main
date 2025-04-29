@@ -6,10 +6,7 @@
   let width = 100;
   let height = 50;
 
- let alturaOscar = d3.scaleLinear()
-    .domain([0, 100])
-    .range([0, 83])
-    
+
 let alturaCannes = d3.scaleLinear()
     .domain([0, 100])
     .range([0, 95])
@@ -26,22 +23,23 @@ let alturaCannes = d3.scaleLinear()
 
 <div class="oscar-container">
 
+
+
   {#each numbers as n}
   <div>
 
     <div class="item-wrapper">
-      <p class="number" style= "color: {color(n.cantidad)}">{n.cantidad}</p>
-      <div class="column-wrapper">
-        <div class="dorado" style="background-color: #E7B548"></div>
-        <div class="column-oscar" style="height: { alturaOscar(n.cantidad)}%; background-color: {color(n.cantidad)}"></div>
-        <img class="oscar" src="./images/oscar_dorado.svg" alt="">
+      <p class="number" style= "color: {color(n.otra)}">{n.otra}</p>
+      <div class="column-wrapper-cannes">
+        <div class="dorado-c" style="background-color: #E7B548"></div>
+        <div class="column-oscar-c" style="height: { alturaCannes(n.otra)}%; background-color: {color(n.otra)}"></div>
+        <img class="cannes" src="./images/cannes2.svg" alt="">
       </div>
       <p class="pelicula">{n.pelicula}</p>
     </div>
   </div>
 
   {/each}
-
 
 </div>
 
@@ -56,7 +54,7 @@ let alturaCannes = d3.scaleLinear()
     padding-left: 110px;
     padding-right: 0px;
     width: 1130px;
-    height: 550px;
+    height: 425px;
    
   
 
@@ -71,44 +69,46 @@ let alturaCannes = d3.scaleLinear()
     align-items: center;
     gap: 10px;
   }
-  .column-wrapper {
+ 
+  .column-wrapper-cannes {
     position: relative;
-    width: 80px;
-    height: 355px;
+    width: 100px;
+    height: 218px;
  
   }
 
 
-  .dorado{
+  .dorado-c{
     position: absolute;
     /*background-color: #E7B548;*/
     left: 2%;
     right: 20%;
-    bottom: 19px;
-    height: 83%;
+    bottom: -5px;
+    height: 95%;
     width: 95%;
  
     /*opacity: 0.8;*/
   }
 
-  .column-oscar {
+  .column-oscar-c {
     position: absolute;
+    /*background-color: #E7B548;*/
     left: 2%;
-    right: 3.10%;
-    bottom: 19px;  
+    right: 20%;
+    bottom: -5px;
+    height: 95%;
     width: 95%;
 
     background-color: red;
   }
-
   
-  .oscar {
+
+  .cannes {
     position: absolute;
     bottom: -10px;
     width: 100%;
     height:100%;
   }
-
 
   
   .number {
